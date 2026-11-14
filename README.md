@@ -1,23 +1,21 @@
-# weekly-cleanup-review
+# Weekly Cleanup Review
 
-Review a multi-assistant setup and suggest careful improvements.
+Review a multi-assistant setup for duplicate work, inactive projects and opportunities to reduce recurring usage. The review can be requested on demand or scheduled for a cadence that suits the owner.
 
-This skill guides an on-demand or scheduled review of skills, workflows, idle assistants and opportunities to reduce unnecessary work. It protects work in progress and seeks the owner’s approval before deletion or schedule changes.
+## Try it
 
-## Install
-
-Install with a compatible agent-skills tool:
-
-```bash
+```sh
 npx skills add felipepetersmann22-star/weekly-cleanup-review-skill
 ```
 
-Alternatively, copy this repository into your agent’s skills directory, keeping `SKILL.md` and any supporting files together. Review the instructions and configure permissions and schedules for your own setup before use.
+Or copy this repository into your agent's skills directory, keeping `SKILL.md` and `assets/` together. Restart or refresh skill discovery if needed. Review the instructions before installing any third-party skill.
 
-The workflow refers to companion skills by name. Install and configure those separately where applicable; see the original [usage-saving workflow](https://github.com/felipepetersmann22-star/agent-skills/blob/1b7a3d8867363c0ff0dda0f9a117aacb7a16a347/usage-saving/WORKFLOW.md).
+Ask your agent: “Review my assistants and routines. Skip anything active, and propose the three most useful improvements. Don't change anything.”
+
+A review may identify an idle assistant that could use a handover and a running deployment that should be left alone. It records observations and proposals separately from completed actions. It does not schedule itself, move files, update memory, delete items or message others merely because a review was requested.
+
+The included [report template](assets/cleanup-report.md) separates evidence, skipped work, completed actions and proposals. Companion skills can help when available but are optional. Coverage depends on the sources and platform tools actually accessible; actual usage or cost requires a relevant usage report.
 
 ## Source and license
 
-This standalone repository was separated from the public [agent-skills collection](https://github.com/felipepetersmann22-star/agent-skills/tree/1b7a3d8867363c0ff0dda0f9a117aacb7a16a347/skills/weekly-cleanup-review).
-
-MIT. See [LICENSE](LICENSE) and [CREDITS.md](CREDITS.md).
+Derived from the [original public skill](https://github.com/felipepetersmann22-star/agent-skills/tree/1b7a3d8867363c0ff0dda0f9a117aacb7a16a347/skills/weekly-cleanup-review). See [credits](CREDITS.md) and the [MIT license](LICENSE).

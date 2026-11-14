@@ -1,42 +1,36 @@
 ---
 name: weekly-cleanup-review
-description: Use for a scheduled weekly (or on-demand) review of a whole multi-assistant setup. Backs up skills and workflows, runs clean-and-compact on every assistant that is idle, skips anything mid-project, flags duplicate skills and routines, and proposes at most three usage cuts in one short report for the owner to approve.
+description: Review a multi-assistant setup for inactive work, duplicate workflows and avoidable recurring usage. Use for an on-demand review or a user-requested recurring review, with proposals and explicit action boundaries.
 license: MIT
 ---
 
 # Weekly cleanup review
 
-The workflow that ties the pack together. One run a week keeps every assistant lean without anyone having to remember. It archives, writes notes and proposes. It never deletes anything or edits a schedule without the owner's yes.
+Produce a useful, evidence-based review of the specified setup. Weekly is a possible cadence, not a default to create. Follow the user's scope, preferences and existing platform tools. An audit is read-only unless the requested work or prior authorization permits changes.
 
-## Schedule
-- One routine for the whole setup, not one per assistant.
-- A weekday morning inside the owner's waking hours, with a flexible start window (`frugal-routines`).
-- Start from last week's report and look only at what changed since.
+## 1. Establish the review
 
-## 1. Back up skills and workflows
-Copy the current skills and workflow or routine definitions into a dated archive folder (for example `archive/skills-workflows/YYYY-MM-DD/`) before proposing any change to them.
+Identify the authorized assistants, sources, available usage report, relevant time period, retention expectations, output destination and intended cadence. Check for an existing workflow before proposing a new routine. For a requested recurring run, determine the time zone and timing from the user's actual needs; do not assume weekdays or mornings. Note inaccessible sources and never claim a complete inventory from partial access.
 
-## 2. Check usage
-If the platform has a usage report, read which assistants and routines used the most this week. Use it to decide where to look first. Don't estimate savings yourself.
+## 2. Inspect and classify
 
-## 3. Sweep the assistants
-For each assistant, most-used first:
-- **Mid-project?** (running worker, build or deploy, waiting on a reply or approval, touched by the owner in the last day or two). Skip it and list it as "in progress, next run".
-- **Long and idle?** Run `clean-and-compact` on it: handover note, memory refresh, file archive.
-- **Short and tidy?** Leave it alone. Don't read it in full.
+- Read the previous report and incremental changes where available. If no reliable baseline exists, review the available scope and mark the coverage limit.
+- Use actual usage data to prioritize, if accessible. Avoid estimating token or cost savings from activity counts alone.
+- For each assistant or chat, distinguish **active or awaiting input**, **idle**, and **unknown**. Skip active or uncertain work rather than interrupting it. For idle work, identify whether a handover, file organization or memory correction would help; do not carry those out merely because an item is idle.
+- Identify similar skills and routines, but compare their audiences, permissions, timing, failure behavior and purpose before proposing a merge.
 
-## 4. Find duplicates
-- Skills that cover the same task: propose merging into the better one (`reuse-before-research`). Don't delete the other; archive it.
-- Routines that read the same sources or serve the same reader at similar times: propose merging into one run (`frugal-routines`).
+## 3. Prepare changes only within scope
 
-## 5. Propose cuts
-Run the setup review in `usage-saving` (section 4). At most three changes, biggest first: remove or merge runs and workers, then cut what each run reads, then small trims. State each in the setup's own terms and say what it gives up.
+For a proposed cleanup, record the exact target, intended result, trade-off and any authorized action. Preserve active work and useful history. Backup, memory edits, archive moves, deletion, new schedules, disabling routines and messaging are separate actions; perform them only when the user's request and the platform's rules authorize them. Do not send a report to other people without explicit authorization.
 
-## 6. Report
-Fill in `assets/cleanup-report.md` and send it as one short message. If nothing changed since last week, send one line, or nothing if the owner prefers. Save the report in the archive folder so next week's run can start from it.
+If an authorized backup is needed, confirm the destination and retention policy, avoid overwriting existing backups, and avoid exposing secrets or copying them to an inappropriate location. Record what was actually captured and whether consistency could be checked. Never label a proposal as a completed backup or change.
 
-## Never
-- Interrupt live work to tidy it.
-- Delete files, notes, skills or chat history without an explicit yes.
-- Change schedules, plans or another person's setup without their yes.
-- Skip reviews, approvals or safety checks to save usage.
+Optional companions: use `clean-and-compact`, `reuse-before-research`, `frugal-routines` or `usage-saving` when installed and applicable. Otherwise perform the bounded review above and report the missing capability; they are not required dependencies.
+
+## 4. Report
+
+Use [the report template](assets/cleanup-report.md) when helpful. Distinguish observations, actions actually completed, skipped or inaccessible work, and proposed changes with evidence and trade-offs. Give up to three highest-impact recommendations unless the user requests a different scope. Describe real activity counts and unverified estimates separately. Deliver in the requested location; say when a backup, schedule or external notification has not been performed.
+
+## Example
+
+One assistant is awaiting a deployment decision; another has been idle and has an outdated handover. A review lists the first as active and proposes updating the second's handover. It does not stop the deployment, edit memory, move files, schedule a review or message someone else unless separately authorized.

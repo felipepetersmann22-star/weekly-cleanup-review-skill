@@ -1,24 +1,21 @@
-# Weekly cleanup review: [YYYY-MM-DD]
+# Cleanup review: [period]
 
-## Compacted (safe to start fresh)
-- [Assistant or chat]: handover at [path or link]
+## Scope and evidence
+- Reviewed: [authorized sources and period]
+- Unavailable or incomplete: [sources or none]
 
-## Skipped, work in progress
-- [Assistant or chat]: [what is in flight], check again next run
+## Active or uncertain: skipped
+- [Assistant or workflow]: [why it was skipped]
 
-## Archived
-- [Assistant]: [n] files moved to [archive path]
+## Observations
+- [Target]: [observation and evidence]
 
-## Memory refreshed
-- [Assistant]: [facts added, corrected or removed, one line each]
+## Completed actions
+- [Action and result, with destination if applicable, or none]
 
-## Waiting for your yes
-- Delete: [file or folder], reason
-- Merge: [skill or routine A] + [B], reason
+## Proposed changes
+1. [Target and change]. Benefit: [reason]. Trade-off: [what changes or may be lost]. Authorization needed: [if applicable].
 
-## Usage cuts proposed (max 3, biggest first)
-1. [Change in the setup's own terms]. Gives up: [trade-off]
-2.
-3.
-
-Skills and workflows backed up to: [archive path]
+## Verification and limits
+- Backup, configuration, delivery or other checks: [observed result or not performed]
+- Usage comparison: [actual source and units, or not measured]
